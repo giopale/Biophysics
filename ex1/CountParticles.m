@@ -1,6 +1,6 @@
 % CountParticles 
 % Author: Giorgio Palermo
-% V1.0
+% V2.0
 % 
 % 
 % Syntax C=CountParticles(pos,L,M);
@@ -16,27 +16,17 @@
 % C is a MxMxM matrix having the (i,j,k)-th element
 % equal to the number of particles within the (i,j,k)- 
 % th voxel of the box.
-clear
 
-N = 30; %number of particles
-L=1; %size of the box
-M = 10; %number of voxels
-pos = L*randn(N,3);
-
+function C=CountParticles(pos,M)
 Y(:,1) = discretize(pos(:,1),M);
 Y(:,2) = discretize(pos(:,2),M);
 Y(:,3) = discretize(pos(:,3),M);
-
+%disp(Y);
 C = zeros(M,M,M);
-
-for i=1:M
-C(:,:,i) = histcounts2(pos(:,1),pos(:,2),M)
-end
-
-
-
-
-
-function C=CountParticles(pos,L,M)
-
+ for i=1:size(Y)
+     idx = sub2ind(size(C),Y(i,1),Y(i,2),Y(i,3));
+     C(idx)= C(idx) + 1;
+ end
+%     disp(C) 
+    
 end

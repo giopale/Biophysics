@@ -20,7 +20,7 @@ clear
 
 N = 1e6; %number of particles
 L=1; %size of the box
-M = 1e2; %number of voxels
+M = 100; %number of voxels
 pos = L*randn(N,3);
 
 tic
@@ -30,7 +30,7 @@ toc
 function C=CountParticles(pos,L,M)
 C = zeros(M,M,M);
 
-for i=1:M
-C(:,:,i) = histcounts2(pos(:,1),pos(:,2),M);
-end
+    for i=1:M
+    C(:,:,i) = histcounts2(pos(:,1),pos(:,2),M);
+    end
 end
