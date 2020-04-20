@@ -1,12 +1,20 @@
 
 clear
 
-N = 1e6; %number of particles
-L=1; %size of the box
-M = 100; %number of voxels
-pos = L*randn(N,3);
+if 1<2 
+    N = 1e6; %number of particles
+    L=10; %size of the box
+    M = 100; %number of voxels
+    pos = L*rand(N,3);
+
+else
+    N = 30; %number of particles
+    L=10; %size of the box
+    M = 2; %number of voxels
+    pos = L*rand(N,3);
+end
 
 tic
-C =CountParticles(pos,M);
+[C,Npos] = CountParticles2(pos,L,M);
 toc
 

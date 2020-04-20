@@ -1,4 +1,4 @@
-function C=CountParticles(pos,L,M)
+function [C,Npos]=CountParticles2(pos,L,M)
 % Author: Giorgio Palermo
 % V3 .0
 % 
@@ -30,10 +30,29 @@ function C=CountParticles(pos,L,M)
 dx = L/M;
 C=zeros(M,M,M);
 
+idx= zeros(size(pos,1),3);
 for i=1:size(pos,1)
-    idx = round(pos(i,1)/dx + .5);
-    idy = round(pos(i,2)/dx + .5);
-    idz = round(pos(i,3)/dx + .5);
-    C(idx, idy, idz) = C(idx,idy,idz) + 1;
+    
+    idx(i,1) = round(pos(i,1)/dx + .5);
+    idx(i,2) = round(pos(i,2)/dx + .5);
+    idx(i,3) = round(pos(i,3)/dx + .5);
+    C(idx(i,1), idx(i,1), idx(i,1)) = C(idx(i,1), idx(i,1), idx(i,1)) + 1;
+    
 end
+[~,~,ic] = unique(idx,'rows','stable');
+h=accumarray(ic,1);
+Npos = h(ic);
+
+% T=table(idx,  ic, Npos)
+% h
 end
+
+
+
+
+
+
+
+
+
+
