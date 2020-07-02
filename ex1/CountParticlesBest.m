@@ -1,6 +1,6 @@
-function [C,Npos]=CountParticles2(pos,L,M)
+function [C,Npos]=CountParticlesBest(pos,L,M)
 % Author: Giorgio Palermo
-% V3 .0
+% V4 .0
 % 
 % 
 % Syntax C=CountParticles(pos,L,M);
@@ -30,31 +30,21 @@ function [C,Npos]=CountParticles2(pos,L,M)
 % M = 10; %number of voxels
 % pos = L*rand(N,3);
 % 
-% CountParticles(pos,L,M);
+% CountParticlesBest(pos,L,M);
 
-dx = L/M;
-C=zeros(M,M,M);
+C=zeros(M,M,M,'uint32');
 N=size(pos,1);
+Npos = zeros(N,1,'uint32');
+scale_factor = M/L;
 
-idx= zeros(N,3);
-for i=1:N
-    
-    idx(i,1) = round(pos(i,1)/dx + .5);
-    idx(i,2) = round(pos(i,2)/dx + .5);
-    idx(i,3) = round(pos(i,3)/dx + .5);
-    C(idx(i,1), idx(i,2), idx(i,3)) = C(idx(i,1), idx(i,2), idx(i,3)) + 1;
-    
-end
-for i=1:N
-    Npos(i,1) = C(idx(i,1), idx(i,2), idx(i,3));
-end
-% [~,~,ic] = unique(idx,'rows','stable');
-% h=accumarray(ic,1);
-% Npos = h(ic);
+pos = ceil(pos*scale_factor);
 
-% T=table(pos,idx,  ic, Npos)
-% h
+loc = sub2ind([M M M],pos(:,1),pos(:,2),pos(:,3));
+for k=1:N
+    C(loc(k)) = C(loc(k))+1;
 end
+
+Npos = C(loc);
 
 
 
