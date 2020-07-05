@@ -1,4 +1,4 @@
-\documentclass{beamer}
+\documentclass[t]{beamer}
 \usepackage[italian]{babel}
 \usepackage{amsmath}
 \usepackage{amsthm}
@@ -21,11 +21,13 @@
 \usepackage{commath}
 \usepackage{siunitx}
 \usepackage{physics}
+\usepackage{wrapfig}
 
 \newcommand{\ca}{\text{Ca}^{2+}}
 
 \usepackage{etoolbox} %Chiama la barra del titolo anche senza inserire il titolo slide
-%
+\setlength{\parskip}{5pt}%
+
 % Choose how your presentation looks.
 %
 % For more themes, color themes and font themes, see:
@@ -59,77 +61,114 @@
 %\begin{frame}{Outline}
 %  \tableofcontents{}
 %\end{frame}
-\begin{frame}{Aims}
+% \begin{frame}{Aims}
+% The aim of this presentation is to give a general description and interpretation of what experiments found about the gating process of BK channels.
+
+% \medskip
+% Potassium transfer through the cell membrane is regulated by different kind of channels; among these one special mention goes to the BK channels, which are large conductance calcium-activated potassium channels, hence the name, which stands for \emph{big potassium}.
+
+% \end{frame}
+
+\begin{frame}{Introduction}
 The aim of this presentation is to give a general description and interpretation of what experiments found about the gating process of BK channels.
 
-In particular we consider what types of kinetic gating mechanism can account for the single-channel current records for the activation of BK channels by $\ca$ and voltage.
-
-\end{frame}
-
-\begin{frame}{Introduction}
 Potassium is one of the most important ions involved in the cell physiology.
-Its concentrations inside and outside the cell membranes, together with the ones of other important ions, strongly determines the electric properties of the cell membrane, such as the resting potential.
+Its concentrations inside and outside the cell membranes, together with the ones of other ions, strongly determines the electric properties of the cell membrane, such as the resting potential. 
 
-The potassium transfer through the cell membrane is regulated by different kind of channels; among these one special mention goes to the BK channels, which are large conductance calcium-activated potassium channels, hence the name, which stands for \emph{big potassium}. %which has the property of being activated by the joint action of depolarization and $\text{Ca}^{2+}.$
+Potassium transfer through the cell membrane is regulated by different kind of channels; among these one special mention goes to the BK channels, which are large conductance calcium-activated potassium channels, hence the name, which stands for \emph{big potassium}.
 
 \end{frame}
 
 \begin{frame}{Introduction}
-Remarkably, the voltage dependent activation of the BK channels creates a negative feedback system to drive the membrane potential more negative, which would then close both the open BK channels and also the voltage dependent $\ca$ channels which are often localized in the vicinity.
+One remarkable property of BK channels is that they are part of a negative feedback system that regulates Calcium and Potassium transfer.
 
-Through this feedback mechanism BK channels are involved in many physiological processes and their dysfunction can lead to diseases such autism, mental retardation, epilepsy and others.
+This mechanism involves also voltage activated Calcium channels that are typically located in the vicinity of BK channels.
+
+%Remarkably, the voltage dependent activation of the BK channels creates a negative feedback system to drive the membrane potential more negative, which would then close both the open BK channels and also the voltage dependent $\ca$ channels which are often localized in the vicinity.
+
+Through this feedback mechanism BK channels are involved in many physiological processes.
+
+Their dysfunction can lead to diseases such autism, mental retardation, epilepsy and others.
+
+In particular we consider what types of kinetic gating mechanism can account for the single-channel current records for the activation of BK channels by $\ca$ and voltage.
 \end{frame}
 
 \begin{frame}{Structure of a BK channel}
 We are now looking at a schematic diagram of the modular structure of a BK channel.
+
 Only two of the four subunits are shown with the front and back subunits removed.
 
-Bk channels are comprised of four transmembrane voltage sensor domains (VSD) surrounding a central pore gate domain (PGD), and a large cytosolic domain (CTD).
+Bk channels made of four transmembrane voltage sensor domains (VSD) surrounding a central pore gate domain (PGD), and a large cytosolic domain (CTD) also referred as gating ring.
 
 Each VSD is formed by five transmembrane segments, S0 to S4 of a single subunit.
-The central PGD is formed by S5 and S6 from each subunit.
+
+VSDs are resposible for the voltage sensibility of the channel.
 
 \end{frame}
 
 \begin{frame}{Structure of a BK channel}
-The gating ring is formed by the RCK1 and RCK2 (regulators of conductance) domains of each of the four subunits, forming a ring with a central opening.
-Here is located the $\ca$ sensibility of the channel: binding with $\ca$ expands the gating ring, pulling on the RCK1-S6 linkers to activate the channel.
+The gating ring is formed by the RCK1 and RCK2 (regulators of conductance) domains of each of the four subunits
 
-The voltage sensibility of the channel is due to the S4 transmembrane segment, which is elevated by depolarization, pulling on the S4-S5 linkers to activate the channels.
+The RCK modules together form a ring with a central opening (gating ring).
+
+The gating ring is responsible for the $\ca$ sensibility of the channel.
+
+VSDs and RCKs are allosterically coupled to the PGD through linkers.
+
+Through linkers, VSDs and RCKs apply force on the PGD in order to activate the channel.
 \end{frame}
 
-\begin{frame}[t]\frametitle{DSM models}
-    DSM, which stands for discrete state Markov, form the class of models mostly used to describe gating of BK channels.
+\begin{frame}{DSM models}
+    Now that we know the modular structure of the BK channels, we introduce a class of models used to describe gating of BK channels: DSM.
 
-    They are based upon three assumptions:
+    The main idea is that channels gate by moving among conformational states, which in our case are identified by three parameters: num. of activated VSDs, num. of activated RCKs, open/closed PGD.
+
+    In a 2-state model the dwell-time of a state in DSM is exponentially distributed with characteristic time $\tau = 1/k,$ where $k$ is called rate constant for the transition.
+
+    More generally, for multiple state models, the dwell-time of the i-esim state is still exponentially distributed, but with characteristic time $\tau_i = 1/\sum_j k_{ij}.$
+
+    This situation is referred to as \emph{mixed exponentials.}
+
+
+\end{frame}
+
+\begin{frame}{DSM models}
+    There are three crucial assumptions one ch makes describing the kinetics of BK channels through DSM, which are:
     \begin{itemize}
-    	\item Short transition times
-    	\item Rate constants invariant for constant experimental condition
-    	\item The gating takes place by means of changing the rate constants
+      \item Short transition times
+      \item Rate constants invariant for constant experimental conditions
+      \item The gating takes place by means of changing the rate constants
     \end{itemize}
-    The main idea is that channels gate by moving among conformational states, which have exponentially distributed dwell-times.
+    
+    It follows from the second assumption that the rate constants for leaving a state are independent of the previous sequence of states.
 
-    If gating concerns multiple states the dwell-time distribution is an exponential distribution with mean dwell time which is the inverse of the sum of the rate constants for the transitions involved; this is also referred as mixed exponentials.
+    For this reason Markov processes are often referred to as \emph{memory less} processes, even though saying that the rate constants are memory less would be more correct.
 
 \end{frame}
 
 
 \begin{frame}{Gating mechanism for BK channels}
-The theoretical structure of a gating mechanism has to be formulated according to what is known about the microscopic structure of the considered ion channel.
+we want to formulate a kinetic model in accordance to what we know about the modular structure of the considered ion channel.
 
 The BK channel structure, as already discussed, is made of a pore gate domain and four voltage sensitive domains plus four pairs of intertwined RCK domains which are properly linked to the PGD to control its gating.
 
-The voltage and $\ca$ activation system of BK channels can be incorporated into a kinetic model starting with separate models for each.
+States of the model are identified by different conformational configurations of the modules composing the channel.
+
+Observations say that voltage and $\ca$ activations are mainly independent processes.
+
+Thus is natural to build an overall kinetic model starting with separate models for each.
 
 \end{frame}
 
 \begin{frame}{A scheme for voltage dependence}
 
-Regarding the voltage dependence, the gating mechanism is described by [SCHEME 4]; In this 10-state model, each state is comprised of four subunits, as dictated by the tetrameric structure of BK channels.
-The five states in the upper tier are closed and the five states in the lower tier are open, with an open state indicated by an open circle in the middle of the four subunits on the lower tier.
-A square subunit indicates that the voltage sensor in that subunit is relaxed (deactivated), whereas a circular subunit indicates that the voltage sensor is activated.
+Regarding the voltage dependence, the gating mechanism is described by [SCHEME 4].
 
-It is important to notice that there is not an obligatory coupling between voltage sensor movement and channel opening and closing, as channel can open with 0, 1, 2, 3 and 4 activated voltage sensors, with opening probability increasing with the number of activated voltage sensors.
+In this 10-state model, each state is comprised of four subunits, as dictated by the tetrameric structure of BK channels.
+
+The five states in the upper tier are closed and the five states in the lower tier are open, where the open state is indicated by a circle in the middle of the four subunits on the lower tier.
+
+A square subunit indicates that the voltage sensor in that subunit is relaxed (deactivated), whereas a circular subunit indicates that the voltage sensor is activated.
 \end{frame}
 
 \begin{frame}{A scheme for $\ca$ dependence} 
@@ -137,102 +176,143 @@ The gating mechanism for the $\ca$ dependent gating of BK channels is presented 
 
 This scheme parallels the voltage activation shown before except that the activation is by binding $\ca,$ indicated by a shaded subunit.
 
-As in the previous case, there is no obligatory coupling between the $\ca$ binding and channel opening. 
+It is important to notice that there is not an obligatory coupling between sensor (either voltage or $\ca$) activation and channel opening and closing.
+
+The channel can open with 0 to 4 activated sensors. 
+
+Opening probability increases with the number of activated voltage sensors.
+
 
 \end{frame}
 
 \begin{frame}{Total scheme}
 The combination of the voltage and the $\ca$ dependence is shown in [SCHEME 6].
-[SCHEME 6] includes five repetitions of [SCHEME 4] with 0, 1, 2, 3, and 4 bound $\ca$ per channel.
 
-The scheme shows that with one $\ca$ sensor and one voltage sensor for each subunit the channel could potentially enter 25 closed states on the upper tier and 25 open states on the lower tier during gating, each defined by a different combination of activated voltage sensors and bound $\ca$ sites.
+[SCHEME 6] includes five repetitions of [SCHEME 4] with 0 to 4 bound $\ca$ per channel.
+
+The scheme shows that the channel could potentially enter 25 closed states on the upper tier and 25 open states on the lower tier during gating.
+
+Each state is defined by a different combination of activated voltage sensors and bound $\ca$ sites.
 \end{frame}
 
-\begin{frame}{Effective number of visited states}
+\begin{frame}{Effective number of visited states (I)}
 The figure [figure 6] presents the single channel recordings obtained from a single BK channel at three different $\ca$ concentrations.
-The $\ca$ induced increase in channel activity is readily apparent.
 
+What is readily apparent is $\ca$ induced increase in channel activity.
+
+
+\end{frame}
+
+
+\begin{frame}{Effective number of visited states (II)}
 Measuring the open and closed interval durations from long records of stable data and plotting them as frequency histograms on log-log coordinates we get the open and closed dwell-time distribution for a fixed $\ca.$
 
-\end{frame}
-
-\begin{frame}{Effective number of visited states}
 The open distributions are well described by the sum of three significant exponential components and the closed distribution by the sum of five significant exponential components.
 
-This is a rather general result, as open distributions are typically described by 3-4 significant exponential components and closed distribution are typically described by 4-6, suggesting gating in a minimum of 3-4 open states and 4-6 closed states.
+This is a rather general result, as open distributions are typically described by 3-4 significant exponential components and closed distribution are typically described by 4-6.
 
-Then why isn't the BK gating over 25 open and 25 closed states?
-
-One reason is that the 50 states are potential states based on the modular structure of the BK channels. 
-For any given $\ca$ and voltage, gating would be effectively limited to only a small subset of 50 states, so only one subset would generate exponentials with sufficiently large areas to detect.
+The minimum number of exponential components suggests that gating involves a minimum of 3-4 open states and 4-6 closed states.
 
 \end{frame}
 
-\begin{frame}{Effective number of visited states}
+\begin{frame}{Effective number of visited states (III)}
+Then why isn't the BK gating over 25 open and 25 closed states?
+
+One reason is that the 50 states are potential states based on the modular structure of the BK channels, but any given $\ca$ and voltage, gating would be effectively limited to only a small subset of 50 states.
+
+So only a subset of the 50 states would generate exponentials with sufficiently large areas to detect.
+
 Furthermore, calculations on large multistate models show that many of the expected time constants for 50-state models can be nearly identical or too close to detect.
+\end{frame}
+
+\begin{frame}{Activation of BK channels by voltage}
+The activation of a single BK channel by voltage at the single channel level is shown in [FIGURE 9a]
+
+Voltages range from -100 to +100 mV with fixed $95 \ \mu\text{M}\ \ca.$ 
+
+Changing the voltage from -100 to +100 mV decreased the mean observed closed time 4500 times, while increasing the observed mean closed time of 12 times.
+
+The action of depolarization is mainly a destabilization of the closed states (reduced lifetime), with a much smaller stabilization of the open states.
 \end{frame}
 
 \begin{frame}{Activation of BK channels by $\ca$}
 In [FIGURE 6a] we see the activation of a BK channel at the single-channel level by $\ca,$ measured at a fixed +30 mV potential.
+
 The dependence of the opening probability on the $\ca$ concentration is steep.
 
 Increasing the $\ca$ from $0.1$ to $1000\ \mu\text{M}$ increased the mean open interval duration 10 times and decreased mean closed interval duration about 1000 times.
-Hence the major action of $\ca$ is an increase in the effective rate constant for opening (leaving closed states), indicating destabilization of the closed states with a much smaller decrease of the closing rate constant (leaving open states), which gives a much smaller stabilization of open states. 
+
+Also in this case the major action of $\ca$ is a reduction of the mean dwell-time of the closed states, indicating their destabilization.
+
+An increase in the mean open dwell-time indicates stabilization of open states, even though much smaller than the closed states destabilization. 
 
 \end{frame}
 
-\begin{frame}{Activation of BK channels by voltage}
-The activation of a single BK channel by voltage is shown in [FIGURE 9a] for voltages ranging from -70 to +100 mV with fixed $95 \ \mu\text{M}\ \ca.$ 
-
-Changing the voltage from -100 to +100 mV decreased the mean observed closed time 4500 times, while increasing the observed mean closed time of 12 times.
-Hence the predominant action of depolarization is to destabilize the closed states, with a much smaller action on stabilizing the open states.
-\end{frame}
-
-\begin{frame}{Synergistic activation of BK channels by voltage and $\ca$}
+\begin{frame}{Synergistic activation of BK channels by voltage and $\ca$ (I)}
 The joint activation of a BK channel by voltage and $\ca$ is shown in [FIGURE 11].
 
-Jointly increasing of $\ca$ and depolarization led to synergistic increases in the opening probability.
+Jointly increasing of $\ca$ and depolarization leads to synergistic increases in the opening probability, as we can see following the top-left to bottom-right diagonal of the figure.
 
 Increasing $\ca$ gives approximately parallel shifts in the opening probability vs. voltage curves, suggesting independent activation by $\ca$ and voltage, consistently with the modular model discussed before.
 \end{frame}
 
+\begin{frame}{Synergistic activation of BK channels by voltage and $\ca$ (II)}
+This figures contain a plot opening probability vs. voltage at different concentrations in two different scales.
+
+It's clear that increasing $\ca$ gives approximately parallel shifts in the opening probability vs. voltage curve.
+
+This fact supports the hypothesis of independent activation by $\ca$ and voltage, consistently with the modular model discussed before.
+\end{frame}
+
 \begin{frame}{Does the model describe the data?}
-The consistency of the 50-state scheme with the synergistic activation by voltage and $\ca$ was inferred after testing it on a model with limited number states, obtaining good to excellent description of the data.
+The consistency of DSM models was tested on models with reduced number of states, obtaining good to excellent description of the data.
 
-The key assumption in this procedure is that if the reduced scheme can account for the single-channel kinetics, then the full 50-state scheme is also able to account for the kinetics of the system because it contains the reduced model.
+A reduced model lowers the number of constants in such a way it is easier to determine them through simultaneous fitting of data obtained over a range of $\ca$ and voltage w.r.t. a full 50-state model.
 
-The reduced model lowers the number of constant in such a way that they can be determined through simultaneous fitting of data obtained over a range of $\ca$ and voltage.
+The consistency of the 50-state scheme with synergistic activation by voltage and $\ca$ was deduced by the previous result.
+
+The idea is that if the reduced scheme can account for the single-channel kinetics, then the full 50-state scheme is also able to account for the kinetics of the system because it is a generalization of the reduced model.
+
+
 \end{frame}
 
-\begin{frame}{On the action of the gating ring}
-To explore the action of the gating ring and the RCK1-S6 linkers, experiments on mutated BK channels have been made.
-In particular the mutations involved the absence of the gating ring and the length of the RCK1-S6 linkers.
+% \begin{frame}{On the action of the gating ring}
+% To explore the action of the gating ring and the RCK1-S6 linkers, experiments on mutated BK channels have been made.
+% In particular the mutations involved the absence of the gating ring and the length of the RCK1-S6 linkers.
 
-It has been shown that the linkers passively pull on the PGD to bias the channel towards opening in absence of $\ca,$ while they apply an active opening force in  presence of $\ca.$
+% It has been shown that the linkers passively pull on the PGD to bias the channel towards opening in absence of $\ca,$ while they apply an active opening force in  presence of $\ca.$
+% \end{frame}
+
+\begin{frame}{Conclusion}
+BK channels are high-conductance potassium channels with a tetrametric modular structure.
+
+Their garing mechanism is described by DSM models.
+
+In particular the $\ca$ dependent gating and the voltage dependent gating can each be approximated by a two-tiered 10-state model with five closed states on the upper tier and five open states in the lower tier.
+
+The joint activation by $\ca$ and voltage is obtained with five repeats of the 10-state voltage activation mechanism, where each repeat has 0 to 4 activated $\ca$ sites.
+
+Observations confirm that, to a first approximation, voltage and $\ca$ can act independently to activate the channel.
+
+It has been observed that the channel activation takes place mainly by increasing the opening rate, or equivalently destabilizing the closed states.
+
+
 \end{frame}
 
 \begin{frame}{Conclusion}
-The $\ca$ dependent ring and the voltage dependent ring can each be approximated by a two-tiered 10-state models with five closed states on the upper tier and five open states in the lower tier.
+Future studies need to put light on some open problems:
 
-The joint activation by $\ca$ and voltage is obtained with five repeats of the 10-state activation mechanism, where each repeat has 0 to 4 bound $\ca,$ or alternatively with five repeats of the 10-states $\ca$ activation mechanism, where each repeat has 0 to 4 activated VSD.
+The possibility of interaction among the various sensors arises considering that both VSDs and $\ca$ sensors are attached to the PGD.
 
-$\ca$ and depolarization activate BK channels by predominantly increasing the rate of channel opening, or destabilizing the closed states.
+The idea to test is if they interact allosterically through it.
 
-To a first approximation, voltage and $\ca$ can act independently to activate the channel.
-
-The possibility of interaction among the various sensors arises considering that both VSDs and $\ca$ sensors are attached to the PGD, then they could interact allosterically through it.
-\end{frame}
-
-\begin{frame}{Conclusion}
 A preliminary study has shown that a highly constrained 50-state model can approximate the single-channel data.
+
 A viable model would describe both the single channel kinetics and the kinetics of the macro current data.
 
 Future studies need to expand the BK models to take into account the two high affinity $\ca$ binding sites rather than the usual assumption of one high affinity site.
+
 This would shift the 50-state model to a 250-state model, with increased computational complexity.
-\end{frame}
-
-\begin{frame}{Altro?}
-
 \end{frame}
 
 

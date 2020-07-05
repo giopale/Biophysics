@@ -360,6 +360,8 @@ INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/translator/translator.sty
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/physics/physics.sty
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/physics/physics.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/wrapfig/wrapfig.sty
 INPUT BP_presentation.aux
 INPUT BP_presentation.aux
 OUTPUT BP_presentation.aux
@@ -481,9 +483,11 @@ OUTPUT BP_presentation.snm
 INPUT BP_presentation.aux
 INPUT ./BP_presentation.out
 INPUT ./BP_presentation.out
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb

@@ -23,6 +23,9 @@
 \usepackage{physics}
 \usepackage{wrapfig}
 
+\setlength{\parskip}{5pt}%
+\setlength{\columnsep}{1pt}%
+
 \newcommand{\ca}{\text{Ca}^{2+}}
 
 \usepackage{etoolbox} %Chiama la barra del titolo anche senza inserire il titolo slide
@@ -98,21 +101,21 @@
 \begin{frame}[t]\frametitle{DSM models}
     DSM stands for \emph{Discrete State Markov.}
 
-	Crucial assumptions:
+    Idea: channels gate by moving among conformational states: $\rightarrow \quad\{\# \text{VSDs};\ \# \text{RCKs};\ \text{O/C PGD}\}$
+
+    Dwell-times $\tau$: exponentially distributed.
+
+    If gating concerns more than two states: $\quad \tau_i = \frac{1}{\sum_{j\neq i} k_{i\rightarrow j}}$
+  
+    with $k_{i\rightarrow j}$ rate constant for transition from state $i$ to state $j.$
+
+
+    Crucial assumptions for DSM for BK channels:
 	\begin{itemize}
     	\item Short transition times: irrelevant w.r.t. open/closed times
     	\item Rate constants invariant for constant experimental condition
     	\item The gating takes place by means of changing the rate constants
     \end{itemize}
-
-    Idea: channels gate by moving among conformational states with exponentially distributed dwell-times.
-
-    If gating concerns more than two states dwell-time $\tau:$
-    \[
-    \tau_i = \frac{1}{\sum_{j\neq i} k_{i\rightarrow j}}
-    \]
-    with $k_{i\rightarrow j}$ rate constant for transition from state $i$ to state $j.$
-
 
 
 
@@ -127,6 +130,8 @@ The BK channel structure is made of:
 	\item Four VSDs
 	\item Four pairs of RCK domains
 \end{itemize}
+
+States of the model $ \quad \leftrightarrow \quad\{\# \text{VSDs};\ \# \text{RCKs};\ \text{O/C PGD}\}$
  
 Observations say that voltage and $\ca$ activation systems of BK channels are (mainly) independent $\rightarrow$ the starting point is to build separate models for each.
 \end{frame}
@@ -179,7 +184,7 @@ $\implies$ 25 closed + 25 open states = 50-state model for BK gating.
 \includegraphics[width=.7\textwidth]{Ca_activation_v_vs_time.png}
 \end{figure}
 
-Single channel current recordings at three different $\ca$ concentrations $\rightarrow$ $\ca$ induced increase in channel activity.
+Single channel current recordings at three different $\ca$ concentrations $\rightarrow$ $\ca$ induces increase in channel activity.
 \end{frame}
 
 \begin{frame}{Effective number of visited states (II)}
@@ -218,6 +223,7 @@ Voltage activation from -100 to + 100 mV with $95\ \mu\text{M}\ \ca$ to saturate
 
 Mean open interval $\rightarrow$ increased about 12 times;
 
+\vspace{-8pt}
 Mean closed interval $\rightarrow$ decreased about 4500 times.
 \vfill
 \end{frame}
@@ -225,8 +231,9 @@ Mean closed interval $\rightarrow$ decreased about 4500 times.
 \begin{frame}{Activation by $\ca$}
 \begin{figure}
 \centering
-\includegraphics[width=\textwidth]{Ca_activation_1.png}
+\includegraphics[width=.9\textwidth]{Ca_activation_1.png}
 \end{figure}
+\vspace{-5pt}
 Activation of a BK channel at the single-channel level by Ca2+, measured at a fixed +30 mV potential.
 The dependence of the opening probability on the Ca2+ concentration is steep.
 
@@ -234,6 +241,7 @@ Increasing the $\ca$ from 0.1 to 1000 $\mu\text{M}:$
 
 Mean open interval $\rightarrow$ increased about 10 times;
 
+\vspace{-5pt}
 Mean closed interval $\rightarrow$ decreased about 1000 times.
 \vfill
 \end{frame}
@@ -257,27 +265,33 @@ Increasing $\ca$ gives approximately parallel shifts in the opening probability 
 \end{frame}
 
 \begin{frame}{Does the model describe the data?}
+\begin{wrapfigure}{R}{0.5\textwidth}
+  \begin{center}
+    \includegraphics[width=0.38\textwidth]{50_State_Model.png}
+  \end{center}
+\end{wrapfigure}
 Is the 50-state DSM model we derived consistent with the experimental observations?
 
 Tests have been made on restricted models (with reduced number of states), obtaining \emph{good to excellent} agreement with the data.
 
-$\rightarrow$ 50-state can agree with the data equally or better than one of its sub-models.
-
 Restricted models $\rightarrow$ lower number of constants to fit to the data.
 
-\end{frame}
 
-\begin{frame}{On the action of the gating ring}
-\begin{wrapfigure}{R}{0.5\textwidth}
-  \begin{center}
-    \includegraphics[width=0.38\textwidth]{BK_Cartoon_1.png}
-  \end{center}
-\end{wrapfigure}
-To explore the action of the gating ring and the RCK1-S6 linkers, experiments on mutated BK channels have been made. In particular the mutations involved the absence of the gating ring and the length of the RCK1-S6 linkers.
-
-It has been shown that the linkers passively pull on the PGD to bias the channel towards opening in absence of Ca2+, while they apply an active opening force in presence of Ca .
+$\rightarrow$ 50-state can agree with the data equally or better than one of its sub-models.
 
 \end{frame}
+
+% \begin{frame}{On the action of the gating ring}
+% \begin{wrapfigure}{R}{0.5\textwidth}
+%   \begin{center}
+%     \includegraphics[width=0.38\textwidth]{BK_Cartoon_1.png}
+%   \end{center}
+% \end{wrapfigure}
+% To explore the action of the gating ring and the RCK1-S6 linkers, experiments on mutated BK channels have been made. In particular the mutations involved the absence of the gating ring and the length of the RCK1-S6 linkers.
+
+% It has been shown that the linkers passively pull on the PGD to bias the channel towards opening in absence of Ca2+, while they apply an active opening force in presence of Ca .
+
+% \end{frame}
 
 \begin{frame}[t]{Conclusion}
 \begin{figure}
@@ -308,7 +322,7 @@ Future studies:
 
 \begin{frame}
 \begin{center}
-\huge{THANK YOU FOR YOUR ATTENTION}
+\huge{THANK YOU}
 \end{center}
 \end{frame}
 

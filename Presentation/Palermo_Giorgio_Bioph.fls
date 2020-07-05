@@ -538,9 +538,8 @@ INPUT ./Synergistic_activation_1.png
 INPUT Synergistic_activation_2.png
 INPUT ./Synergistic_activation_2.png
 INPUT ./Synergistic_activation_2.png
-INPUT BK_Cartoon_1.png
-INPUT ./BK_Cartoon_1.png
-INPUT ./BK_Cartoon_1.png
+INPUT 50_State_Model.png
+INPUT ./50_State_Model.png
 INPUT BK_Cartoon.png
 INPUT ./BK_Cartoon.png
 INPUT 50_State_Model.png
@@ -559,7 +558,7 @@ OUTPUT Palermo_Giorgio_Bioph.snm
 INPUT Palermo_Giorgio_Bioph.aux
 INPUT ./Palermo_Giorgio_Bioph.out
 INPUT ./Palermo_Giorgio_Bioph.out
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb
@@ -568,4 +567,5 @@ INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pf
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
