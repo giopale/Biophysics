@@ -62,6 +62,8 @@
 \begin{frame}
 \frametitle{Table of Contents}
 \tableofcontents
+
+Images and results reference: \emph{Single Channel Kinetics of BK (Slo1) Channels,} Y. Geng and K. L. Magleby, Frontiers in Physiology, 01/2015.
 \end{frame}
 
 \section{Introduction}
@@ -87,30 +89,55 @@
 \end{figure}
 \end{frame}
 
-\section{BK channel: modular structure}
+\section{BK channel: tetrameric modular structure}
 
 \begin{frame}{Structure of a BK channel}
 \begin{figure}
 \centering
-\includegraphics[width=.8\textwidth]{BK_Cartoon.png}
+\includegraphics[height=.5\textheight]{BK_Cartoon.png}
 \end{figure}
-\hfill
+VSD $\rightarrow$ Voltage Sensitive Domain
+
+\vspace{-5pt}
+PGD $\rightarrow$ Pore Gate Domain
+
+\vspace{-5pt}
+CTD $\rightarrow$ Cytosolic Domain
 \end{frame}
 
 \section{DSM and gating mechanism}
-\begin{frame}[t]\frametitle{DSM models}
-    DSM stands for \emph{Discrete State Markov.}
+\begin{frame}\frametitle{DSM models}
+    DSM stands for \emph{Discrete State Markov} models
 
     Idea: channels gate by moving among conformational states: $\rightarrow \quad\{\# \text{VSDs};\ \# \text{RCKs};\ \text{O/C PGD}\}$
+    \bigskip
 
-    Dwell-times $\tau$: exponentially distributed.
+    Dwell-times: exponentially distributed $\quad \tau = 1/k \quad$ with $k$ rate constant.
 
-    If gating concerns more than two states: $\quad \tau_i = \frac{1}{\sum_{j\neq i} k_{i\rightarrow j}}$
-  
-    with $k_{i\rightarrow j}$ rate constant for transition from state $i$ to state $j.$
+    If gating concerns more than two states: $\quad \tau_i = \frac{1}{\sum_{j} k_{i\rightarrow j}} \quad$
+    with 
+    \begin{itemize}
+    	\item $j:$ states connected to $i$
+    	\item $k_{i\rightarrow j}$ rate constant for transition from state $i$ to state $j.$
+    \end{itemize}
+
+    
 
 
-    Crucial assumptions for DSM for BK channels:
+\end{frame}
+
+\begin{frame}{Gating mechanism (I)}
+% The theoretical structure of a gating mechanism has to be formulated according to what is known about the microscopic structure of the considered ion channel.
+
+% The BK channel structure is made of:
+% \begin{itemize}
+% 	\item PGD
+% 	\item Four VSDs
+% 	\item Four pairs of RCK domains
+% \end{itemize}
+
+% States of the model $ \quad \leftrightarrow \quad\{\# \text{VSDs};\ \# \text{RCKs};\ \text{O/C PGD}\}$
+ Crucial assumptions for DSM for BK channels:
 	\begin{itemize}
     	\item Short transition times: irrelevant w.r.t. open/closed times
     	\item Rate constants invariant for constant experimental condition
@@ -118,21 +145,6 @@
     \end{itemize}
 
 
-
-\end{frame}
-
-\begin{frame}{Gating mechanism (I)}
-The theoretical structure of a gating mechanism has to be formulated according to what is known about the microscopic structure of the considered ion channel.
-
-The BK channel structure is made of:
-\begin{itemize}
-	\item PGD
-	\item Four VSDs
-	\item Four pairs of RCK domains
-\end{itemize}
-
-States of the model $ \quad \leftrightarrow \quad\{\# \text{VSDs};\ \# \text{RCKs};\ \text{O/C PGD}\}$
- 
 Observations say that voltage and $\ca$ activation systems of BK channels are (mainly) independent $\rightarrow$ the starting point is to build separate models for each.
 \end{frame}
 
@@ -299,7 +311,7 @@ $\rightarrow$ 50-state can agree with the data equally or better than one of its
 \subfloat{\includegraphics[width=.38\textwidth]{BK_Cartoon.png}}\qquad
 \subfloat{\includegraphics[width=.34\textwidth]{50_State_Model.png}}
 
-\subfloat{\includegraphics[width=.34\textwidth]{Ca_Activation_Probability.png}}\qquad
+\subfloat{\includegraphics[width=.34\textwidth]{Voltage_Closed_Time.png}}\qquad
 \subfloat{\includegraphics[width=.34\textwidth]{Synergic_Activstion_3.png}}
 \vfill
 \end{figure}
@@ -315,7 +327,6 @@ Future studies:
 \begin{itemize}
 	\item Possibility of interaction between various sensors
 	\item Agreement of 50-state DSM with macro current data
-	\item Relaxation of the assumption of single $\ca$ binding site
 \end{itemize}
 
 \end{frame}

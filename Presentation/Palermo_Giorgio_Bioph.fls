@@ -468,6 +468,7 @@ INPUT /usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT Palermo_Giorgio_Bioph.toc
 INPUT Palermo_Giorgio_Bioph.toc
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmss10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmssi10.tfm
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmss17.tfm
 INPUT Cell_Cartoon.png
 INPUT ./Cell_Cartoon.png
@@ -481,7 +482,6 @@ INPUT ./Feedback_Mechanism.png
 INPUT BK_Cartoon.png
 INPUT ./BK_Cartoon.png
 INPUT ./BK_Cartoon.png
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmssi10.tfm
 INPUT 50_State_Model.png
 INPUT ./50_State_Model.png
 INPUT ./50_State_Model.png
@@ -544,9 +544,9 @@ INPUT BK_Cartoon.png
 INPUT ./BK_Cartoon.png
 INPUT 50_State_Model.png
 INPUT ./50_State_Model.png
-INPUT Ca_Activation_Probability.png
-INPUT ./Ca_Activation_Probability.png
-INPUT ./Ca_Activation_Probability.png
+INPUT Voltage_Closed_Time.png
+INPUT ./Voltage_Closed_Time.png
+INPUT ./Voltage_Closed_Time.png
 INPUT Synergic_Activstion_3.png
 INPUT ./Synergic_Activstion_3.png
 INPUT ./Synergic_Activstion_3.png

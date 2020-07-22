@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1593970952 "BP_presentation.tex" "BP_presentation.pdf" "BP_presentation" 1593970954
-  "/dev/null" 1593970944 0 d41d8cd98f00b204e9800998ecf8427e ""
+["pdflatex"] 1593970952 "BP_presentation.tex" "BP_presentation.pdf" "BP_presentation" 1594029144
+  "/dev/null" 1594029130 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/usr/local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1246382020 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm" 1246382020 1120 7f9f170e8aa57527ad6c49feafd45d54 ""
@@ -266,10 +266,10 @@
   "BP_presentation.out" 1593970953 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   "BP_presentation.tex" 1593970950 15458 6baf5ee9cd2571c46b57d82c4e84bde7 ""
   (generated)
-  "BP_presentation.snm"
+  "BP_presentation.toc"
   "BP_presentation.out"
-  "BP_presentation.log"
+  "BP_presentation.snm"
   "BP_presentation.pdf"
   "BP_presentation.nav"
-  "BP_presentation.toc"
+  "BP_presentation.log"
   "BP_presentation.aux"
