@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.4.1)  14 DEC 2020 22:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.4.1)  15 DEC 2020 18:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1224,17 +1224,7 @@ s
 (/usr/local/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/02/27 1.8b listings language file
 )
-(/usr/local/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2019/02/27 1.8b listings language file
-)
-(/usr/local/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2019/02/27 1.8b listings language file
-)
-(./Report.aux
-
-LaTeX Warning: Label `tab:parameters_nofilter' multiply defined.
-
-)
+(./Report.aux)
 \openout1 = `Report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 100.
@@ -1367,7 +1357,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 100.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<Patch_clamp_current_records.png, id=43, 598.235pt x 132.495pt>
+<Patch_clamp_current_records.png, id=55, 598.235pt x 132.495pt>
 File: Patch_clamp_current_records.png Graphic file (type png)
 <use Patch_clamp_current_records.png>
 Package pdftex.def Info: Patch_clamp_current_records.png  used on input line 14
@@ -1379,12 +1369,12 @@ LaTeX Font Info:    Try loading font information for T1+cmss on input line 145.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-<Cell_scheme_derivation.png, id=45, 633.36626pt x 189.70876pt>
+<Cell_scheme_derivation.png, id=57, 633.36626pt x 189.70876pt>
 File: Cell_scheme_derivation.png Graphic file (type png)
 <use Cell_scheme_derivation.png>
 Package pdftex.def Info: Cell_scheme_derivation.png  used on input line 155.
 (pdftex.def)             Requested size: 310.70287pt x 93.0652pt.
-<Cell_scheme.png, id=46, 588.1975pt x 605.26125pt>
+<Cell_scheme.png, id=58, 588.1975pt x 605.26125pt>
 File: Cell_scheme.png Graphic file (type png)
 <use Cell_scheme.png>
 Package pdftex.def Info: Cell_scheme.png  used on input line 156.
@@ -1416,117 +1406,123 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 <special> ps:tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
 {/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./Patch
-_clamp_current_records.png>]
+_clamp_current_records.png>] [2 <./Cell_scheme_derivation.png> <./Cell_scheme.p
+ng>] [3]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 282.
 
-LaTeX Warning: Reference `mah' on page 2 undefined on input line 193.
-
-
-LaTeX Warning: Reference `mah' on page 2 undefined on input line 195.
-
-[2 <./Cell_scheme_derivation.png> <./Cell_scheme.png>]
-<Current.pdf, id=88, 562.1pt x 421.575pt>
+ (/usr/local/texlive/2019/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+<Current.pdf, id=130, 562.1pt x 421.575pt>
 File: Current.pdf Graphic file (type pdf)
 <use Current.pdf>
-Package pdftex.def Info: Current.pdf  used on input line 266.
+Package pdftex.def Info: Current.pdf  used on input line 293.
 (pdftex.def)             Requested size: 217.49539pt x 163.1206pt.
-<Current_r.pdf, id=89, 562.1pt x 421.575pt>
+<Current_r.pdf, id=131, 562.1pt x 421.575pt>
 File: Current_r.pdf Graphic file (type pdf)
 <use Current_r.pdf>
-Package pdftex.def Info: Current_r.pdf  used on input line 267.
+Package pdftex.def Info: Current_r.pdf  used on input line 294.
 (pdftex.def)             Requested size: 217.49539pt x 163.1206pt.
- [3]
-<Bess_all_freq.pdf, id=110, 853.1875pt x 375.4025pt>
-File: Bess_all_freq.pdf Graphic file (type pdf)
-<use Bess_all_freq.pdf>
-Package pdftex.def Info: Bess_all_freq.pdf  used on input line 290.
-(pdftex.def)             Requested size: 420.33076pt x 184.9429pt.
-<Bess10000Hz.pdf, id=111, 562.1pt x 421.575pt>
-File: Bess10000Hz.pdf Graphic file (type pdf)
-<use Bess10000Hz.pdf>
-Package pdftex.def Info: Bess10000Hz.pdf  used on input line 296.
-(pdftex.def)             Requested size: 213.05243pt x 159.78847pt.
-<Bess6310Hz.pdf, id=112, 562.1pt x 421.575pt>
-File: Bess6310Hz.pdf Graphic file (type pdf)
-<use Bess6310Hz.pdf>
-Package pdftex.def Info: Bess6310Hz.pdf  used on input line 297.
-(pdftex.def)             Requested size: 213.05243pt x 159.78847pt.
-<Bess3982Hz.pdf, id=113, 562.1pt x 421.575pt>
-File: Bess3982Hz.pdf Graphic file (type pdf)
-<use Bess3982Hz.pdf>
-Package pdftex.def Info: Bess3982Hz.pdf  used on input line 299.
-(pdftex.def)             Requested size: 213.05243pt x 159.78847pt.
-<Bess2512Hz.pdf, id=114, 562.1pt x 421.575pt>
-File: Bess2512Hz.pdf Graphic file (type pdf)
-<use Bess2512Hz.pdf>
-Package pdftex.def Info: Bess2512Hz.pdf  used on input line 300.
-(pdftex.def)             Requested size: 213.05243pt x 159.78847pt.
-<Bess1585Hz.pdf, id=115, 562.1pt x 421.575pt>
-File: Bess1585Hz.pdf Graphic file (type pdf)
-<use Bess1585Hz.pdf>
-Package pdftex.def Info: Bess1585Hz.pdf  used on input line 302.
-(pdftex.def)             Requested size: 213.05243pt x 159.78847pt.
-<Bess1000Hz.pdf, id=116, 562.1pt x 421.575pt>
-File: Bess1000Hz.pdf Graphic file (type pdf)
-<use Bess1000Hz.pdf>
-Package pdftex.def Info: Bess1000Hz.pdf  used on input line 303.
-(pdftex.def)             Requested size: 213.05243pt x 159.78847pt.
+<Current_fitted.pdf, id=132, 562.1pt x 421.575pt>
+File: Current_fitted.pdf Graphic file (type pdf)
+<use Current_fitted.pdf>
+Package pdftex.def Info: Current_fitted.pdf  used on input line 300.
+(pdftex.def)             Requested size: 217.49539pt x 163.1206pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[4 <./Current.pdf> <./Current_r.pdf> <./Bess_all_freq.pdf>] [5 <./Bess10000Hz.p
-df> <./Bess6310Hz.pdf> <./Bess3982Hz.pdf> <./Bess2512Hz.pdf> <./Bess1585Hz.pdf>
- <./Bess1000Hz.pdf>] [6]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 350.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 350.
+<Bess_all_freq.pdf, id=133, 853.1875pt x 376.40625pt>
+File: Bess_all_freq.pdf Graphic file (type pdf)
+<use Bess_all_freq.pdf>
+Package pdftex.def Info: Bess_all_freq.pdf  used on input line 325.
+(pdftex.def)             Requested size: 419.21117pt x 184.9429pt.
+<Bess10000Hz.pdf, id=134, 562.1pt x 421.575pt>
+File: Bess10000Hz.pdf Graphic file (type pdf)
+<use Bess10000Hz.pdf>
+Package pdftex.def Info: Bess10000Hz.pdf  used on input line 331.
+(pdftex.def)             Requested size: 213.05243pt x 159.78847pt.
+<Bess6310Hz.pdf, id=135, 562.1pt x 421.575pt>
+File: Bess6310Hz.pdf Graphic file (type pdf)
+<use Bess6310Hz.pdf>
+Package pdftex.def Info: Bess6310Hz.pdf  used on input line 332.
+(pdftex.def)             Requested size: 213.05243pt x 159.78847pt.
+<Bess3982Hz.pdf, id=136, 562.1pt x 421.575pt>
+File: Bess3982Hz.pdf Graphic file (type pdf)
+<use Bess3982Hz.pdf>
+Package pdftex.def Info: Bess3982Hz.pdf  used on input line 334.
+(pdftex.def)             Requested size: 213.05243pt x 159.78847pt.
+<Bess2512Hz.pdf, id=137, 562.1pt x 421.575pt>
+File: Bess2512Hz.pdf Graphic file (type pdf)
+<use Bess2512Hz.pdf>
+Package pdftex.def Info: Bess2512Hz.pdf  used on input line 335.
+(pdftex.def)             Requested size: 213.05243pt x 159.78847pt.
+<Bess1585Hz.pdf, id=138, 562.1pt x 421.575pt>
+File: Bess1585Hz.pdf Graphic file (type pdf)
+<use Bess1585Hz.pdf>
+Package pdftex.def Info: Bess1585Hz.pdf  used on input line 337.
+(pdftex.def)             Requested size: 213.05243pt x 159.78847pt.
+<Bess1000Hz.pdf, id=139, 562.1pt x 421.575pt>
+File: Bess1000Hz.pdf Graphic file (type pdf)
+<use Bess1000Hz.pdf>
+Package pdftex.def Info: Bess1000Hz.pdf  used on input line 338.
+(pdftex.def)             Requested size: 213.05243pt x 159.78847pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[4 <./Current.pdf> <./Current_r.pdf>] [5 <./Current_fitted.pdf> <./Bess_all_fre
+q.pdf>] [6 <./Bess10000Hz.pdf> <./Bess6310Hz.pdf> <./Bess3982Hz.pdf> <./Bess251
+2Hz.pdf> <./Bess1585Hz.pdf> <./Bess1000Hz.pdf>] [7]
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 401.
+ (./Test1.m [8] [9] [10]
+[11] [12] [13]) [14]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 404.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 404.
  (./Report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 350.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 350.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 404.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 404.
 Package rerunfilecheck Info: File `Report.out' has not changed.
-(rerunfilecheck)             Checksum: 3BDC06EA271C49923A316C3420E49747;138.
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 350.
+(rerunfilecheck)             Checksum: C9C9A29F0AC1AC32269AAB1A6381168E;271.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 404.
  ) 
 Here is how much of TeX's memory you used:
- 44375 strings out of 492616
- 919375 string characters out of 6129482
- 1337554 words of memory out of 5000000
- 47649 multiletter control sequences out of 15000+600000
- 550439 words of font info for 63 fonts, out of 8000000 for 9000
+ 45869 strings out of 492616
+ 936983 string characters out of 6129482
+ 1585633 words of memory out of 5000000
+ 48675 multiletter control sequences out of 15000+600000
+ 556954 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,19n,145p,670b,1112s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,19n,95p,670b,2399s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
 /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></
 usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></u
 sr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr
 /local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/l
-ocal/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/l
-ocal/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></u
-sr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
-/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/lo
-cal/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local
-/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/
-texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/te
-xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texl
-ive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/local/texliv
-e/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/
-2019/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/20
-19/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2019
-/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2019/t
-exmf-dist/fonts/type1/public/cm-super/sfsx0800.pfb></usr/local/texlive/2019/tex
-mf-dist/fonts/type1/public/cm-super/sfsx0900.pfb></usr/local/texlive/2019/texmf
--dist/fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on Report.pdf (6 pages, 641904 bytes).
+ocal/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/loc
+al/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/loc
+al/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></usr
+/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/l
+ocal/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/loca
+l/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/t
+exlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
+xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texl
+ive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texliv
+e/2019/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/local/texlive/
+2019/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/20
+19/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2019
+/texmf-dist/fonts/type1/public/cm-super/sfrm0500.pfb></usr/local/texlive/2019/t
+exmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2019/tex
+mf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2019/texmf
+-dist/fonts/type1/public/cm-super/sfsx0800.pfb></usr/local/texlive/2019/texmf-d
+ist/fonts/type1/public/cm-super/sfsx0900.pfb></usr/local/texlive/2019/texmf-dis
+t/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2019/texmf-dist/
+fonts/type1/public/cm-super/sftt0800.pfb>
+Output written on Report.pdf (14 pages, 813485 bytes).
 PDF statistics:
- 410 PDF objects out of 1000 (max. 8388607)
- 346 compressed objects within 4 object streams
- 43 named destinations out of 1000 (max. 500000)
- 193 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1037 PDF objects out of 1200 (max. 8388607)
+ 955 compressed objects within 10 object streams
+ 490 named destinations out of 1000 (max. 500000)
+ 222 words of extra memory for PDF output out of 10000 (max. 10000000)
 

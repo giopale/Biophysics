@@ -65,7 +65,7 @@
 
 %Code listing style named "mystyle"
 \lstdefinestyle{mystyle}{
-  language={[03]Fortran},
+  language={Matlab},
   backgroundcolor=\color{backcolour},   commentstyle=\color{codegray},
   keywordstyle=\color{codemagenta},
   numberstyle=\tiny\color{codegray},
@@ -162,7 +162,8 @@ The simulation performed in this exercise is aimed to discover the response of a
 
 In order to get meaningful predictions on the behavior of the cell one must summarize the electrical properties of the system in an electrical scheme, namely the one in figure \ref{fig:cell_scheme}.
 As a first approximation, one can consider the cell membrane as made of a lipid bilayer and ion channels, which can be electrically schematized by capacitors and resistances.
-The fact that both these components experience the same potentials at the two sides, leads us to the conclusion that they must be connected in parallel we will indicate the total capacity and resistance of the cell membrane with $C_m$ and $R_m.$
+The fact that both these components experience the same potentials at the two sides, leads us to the conclusion that they must be connected in parallel.
+We will indicate the total capacity and resistance of the cell membrane with $C_m$ and $R_m.$
 As in this exercise we are considering whole cell patch clamp configuration, access resistance $(R_a)$ of the pipette must be considered as well; the voltage applied is controlled by the experimenter by setting the pipette potential: we will indicate this value with $V.$
 
 In the following passages we will derivate the equations that link the electrical parameters of the simulation $C_m, R_m, R_a$ and $V$ to the current $i$ flowing through the cell.
@@ -182,18 +183,18 @@ A numerical solution for the behavior of the current signal in time is obtained 
 In pseudo-code using $j$ as time index it results in:
 \begin{equation}
     \begin{cases}
-        \dv{V_m}{t} = -V_m(j) + V_{in}(j)\frac{R_m}{\tau(R_m +R_a)}\\
-        i(j)= \frac{Vm(j)}{R_m} +C_m \dv{V_m}{t}\\
+        \dv{V_m}{t} {(j)} = -V_m(j) + V_{in}(j)\frac{R_m}{\tau(R_m +R_a)}\\
+        i(j)= \frac{Vm(j)}{R_m} +C_m \dv{V_m}{t} {(j)}\\
         Vm(j+1) = V_m(j) +\dd{V_m} \dd{t}
     \end{cases}
 \end{equation}
 Note that in this expression we set $V_{in}$ as a time dependent quantity: this is motivated by the fact that we want to simulate the behavior of the pipette-cell system for an input voltage that has the shape of a square wave.
 
 The result of such numeric process is the numerical estimation of the behavior of the current as a function of time.
-This output, as depicted with a red line in figure \ref{mah}, is a smooth function of time.
+This output, as depicted with a red line in figure \ref{fig:current}, is a smooth function of time.
 However in real laboratory situations noise come into play, modifying the ideal shape of the signal from a smooth curve to a disturbed one.
-Therefore, in order to produce a more realistic simulation, noise has been added to the signal (blue line in figure \ref{mah}).
-The distribution of the noise of the signal is non trivial and could in principle depend on many factors, such as cell parameters like membrane resistance or capacitance, ambient parameters like temperature or even on factors related to the experimental apparatus itself.
+Therefore, in order to produce a more realistic simulation, noise has been added to the signal (blue line in figure \ref{fig:current}).
+The distribution of the noise of the signal is non trivial and could in principle depend on many factors, such as cell parameters like membrane resistance or capacitance, ambient parameters like temperature or on factors related to the experimental apparatus itself.
 In this work I chose to assign Gaussian distribution to noise for simplicity; I set the amplitude of this noise in order to make the signal resemble the example shown in class during the discussion of Patch Clamp experiments.
 
 In a laboratory situation we would be interested in retrieving the experimental parameters from data, namely $\tilde{R}_a, \tilde{R}_m$ and $\tilde{C}_m.$
@@ -218,6 +219,7 @@ Starting from this expression and calling $i(t=t_0)=i_{pk}$ and $i(t>>\tau) = i_
 Finally, the estimation of $C_m$ is done using \eqref{eq:update_vm} and the experimental value of $\tau:$
 \begin{equation}
     \tilde{C}_m = \tilde{\tau}\pqty{\frac{1}{\tilde{R}_a}+\frac{1}{\tilde{R}_m}}.
+    \label{eq:Cm_est}
 \end{equation}
 
 Similar equations hold also when the cell presents a resting potential, namely if we call it $V_r$ the analytical solution becomes: 
@@ -235,7 +237,6 @@ and the equations for the experimental parameters become:
 The final part of the simulation involved, as in real experiments, the presence of a 4-pole low pass Bessel filter aimed to "clean" the signal from high-frequency noise.
 As will be discussed later, the presence of this component effectively reduce the HF signal noise over the threshold frequency, however a side effect is introduced: signal peaks are shifted in time and lowered in magnitude.
 This behavior is particularly bad for our estimation, since the derivation of the access resistance is performed starting from the peak value of the current (see \eqref{eq:Ra_estimation}) that is no more accurately reported by the experimental setup.
-
 To overcome this problem, another method can be used to esteem the experimental value of the access resistance $\tilde{R}_a.$
 Starting from equation \eqref{eq:update_vm} and its solution for voltage, namely
 \begin{equation}
@@ -261,12 +262,46 @@ and finally
 This procedure can be implemented in the offline digital analysis by numerically integrating the signal to get the transferred charge and then retrieve the experimental value for the access resistance.
 
 \section{Results, finally! :-)}
+
+In this report I simulated the response of a cell-pipette system characterized by the parameters: $R_a = 100\ \si{\mega\ohm}; R_m = 10 \ \si{\mega\ohm};$ and $C_m=30\ \si{\pico\farad}.$
+The simulation lasts 7 ms and the sampling rate (spacing of the time grid) has been chosen in accordance to a realistic value that one could achieve from a real experiment, namely 100 kHz.
+
+Figure \ref{fig:current} and \ref{fig:current_r} show the computed simulated current in the case of no resting potential and resting potential $V_r = 80$ mV; in both figures the input square wave is drawn in magenta.
+Red and green solid lines represent the numerical solution of the differential equation describing the system; adding Gaussian noise as described before I obtained the wavy line, which is a more realistic representation of the signal that one could retrieve from an experiment.
+
+\noindent In order to estimate $R_a$ and $R_m$ the values of $i_\infty$ and $i_{pk}$ has been retrieved from data.
+The value of $i_\infty$ has been estimated averaging the current values for times larger than five times the time constant of the exponential decay, while the value of $i_{pk}$ has been established averaging the first five current samples after the peak.
+This method was used in order to reduce the dependence of the final values of $R_a$ and $R_m$ from the stochastic error on the current value given by the noise.
+
+\noindent To retrieve the time constant of the exponential decay, an exponential fit has been performed, as can be seen in figure \ref{fig:current_fitted}.
+The value of $\tau$ retrieved from this procedure has been inserted in equation \eqref{eq:Cm_est} to evaluate $C_m.$
+\noindent Table \ref{tab:parameters_nofilter} gathers the values of the experimental parameters for the case with no resting potential and the case in which $V_r = 80 \ \si{\mV}.$ 
+
+The last part of the exercise was related to attenuation of the signal noise using a 4-pole, low pass Bessel filter.
+In laboratory situation as well as in this simulation, this electronic component acts on the signal attenuating all the frequencies higher than a threshold value (hence the name: "low pass").
+In this exercise the filter has been simulated with a built-in Matlab function, \lstinline{belsself(n,omega)}, which is able to reproduce a n-pole Bessel filter with cutoff frequency $\omega.$
+To quantify the modification that the filter applies to the signal, the filtering procedure and the analysis has been repeated for different frequencies, namely six values between 1 and 10 kHz, that I chose to be log-spaced.
+For each cutoff frequency the signal has been filtered and then all the analysis described above was repeated, namely computing $\tilde{R}_a, \tilde{R}_m$ fitting the exponential decay and computing $\tilde{C}_m.$
+The filtered signals are plotted in figure \ref{fig:current_filtered}; from this figure we can see that the lower the threshold frequency, the minor the noise contribution to the signal.
+For the purpose of comparison, all the filtered signals at different cutoff frequencies are plotted together in figure \ref{fig:Bess_all_freq}.
+
+
+
+
 \begin{figure}
 \centering
 \subfloat[]{\includegraphics[width=.49\textwidth]{Current.pdf}\label{fig:current}}
 \subfloat[]{\includegraphics[width=.49\textwidth]{Current_r.pdf}\label{fig:current_r}}
-\caption{\textbf{(a):} Current signal; \textbf{(b):} current signal with 80 mV resting potential}
+\caption{\textbf{(a):} Current signal; \textbf{(b):} current signal with 80 mV resting potential; below each graph the input voltage is represented in magenta}
 \end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=.49\textwidth]{Current_fitted.pdf}
+\caption{Portion of the signal fitted to retrieve $\tau$}
+\label{fig:current_fitted}
+\end{figure}
+
 
 \begin{table}[h]
 \caption{Experimental parameters retrieved from simulation, unfiltered signal}
@@ -293,14 +328,14 @@ This procedure can be implemented in the offline digital analysis by numerically
 \end{figure}
 
 \begin{figure}
-\subfloat{\includegraphics[width=.48\textwidth]{Bess10000Hz.pdf}\label{fig:bess10k}}
-\subfloat{\includegraphics[width=.48\textwidth]{Bess6310Hz.pdf}\label{fig:bess6_3k}}
+\subfloat[]{\includegraphics[width=.48\textwidth]{Bess10000Hz.pdf}\label{fig:bess10k}}
+\subfloat[]{\includegraphics[width=.48\textwidth]{Bess6310Hz.pdf}\label{fig:bess6_3k}}
 
-\subfloat{\includegraphics[width=.48\textwidth]{Bess3982Hz.pdf}\label{fig:bess4k}}
-\subfloat{\includegraphics[width=.48\textwidth]{Bess2512Hz.pdf}\label{fig:bess2_5k}}
+\subfloat[]{\includegraphics[width=.48\textwidth]{Bess3982Hz.pdf}\label{fig:bess4k}}
+\subfloat[]{\includegraphics[width=.48\textwidth]{Bess2512Hz.pdf}\label{fig:bess2_5k}}
 
-\subfloat{\includegraphics[width=.48\textwidth]{Bess1585Hz.pdf}\label{fig:bess1_5k}}
-\subfloat{\includegraphics[width=.48\textwidth]{Bess1000Hz.pdf}\label{fig:bess1k}}
+\subfloat[]{\includegraphics[width=.48\textwidth]{Bess1585Hz.pdf}\label{fig:bess1_5k}}
+\subfloat[]{\includegraphics[width=.48\textwidth]{Bess1000Hz.pdf}\label{fig:bess1k}}
 
 \caption{Filtered signals at various cutoff frequencies, namely: 10, 6.3, 4, 3, 2.5, 1.6 and 1 kHz}
 \label{fig:current_filtered}
@@ -309,7 +344,7 @@ This procedure can be implemented in the offline digital analysis by numerically
 
 \begin{table}[h]
 \caption{Experimental parameters retrieved from simulation, filtered signals}
-\label{tab:parameters_nofilter}
+\label{tab:parameters_filtered}
 \vspace{-.4cm}
 \centering
 \[
@@ -328,23 +363,42 @@ This procedure can be implemented in the offline digital analysis by numerically
 \]
 \end{table}
 
+\section{Discussion}
+
+The current simulation has been performed starting from the differential equation describing the system; this simulation successfully reproduced the behavior described in the lecture notes.
+After the noise was added, experimental parameters have been retrieved from the sample data.
+It is due to the presence of the noise the fact that these esteems do report a considerable error, of the order of 5-10\% of the real value.
+Although it might seem a poor result, we were able to estimate the uncertainty of a real measurement via simulation: it could be interesting to determine via simulation which is the kind of noise that mostly contribute to the uncertainty of experimental parameters.
+
+The second simulation was performed introducing membrane resting potential.
+This led to an increase of the total current, both the peak value during the transient and the rest value.
+This fact hasn't led to visible improvement in the quality of the estimations.
+It is interesting to notice that the increase in the current value is about 750 pA (see figure \ref{fig:current_r}).
+Such an increase has not made the difference in our case, but in a situation of lower noise it could have led to a significantly better signal-to-noise ratio.
+
+Comparing figure \ref{fig:current} with \ref{fig:current_filtered} we can see that the filtering procedure significantly increase the cleanness of the signal.
+However, there is a drawback: the transient peak of the signal is both lowered and delayed in time.
+A quick overview of this phenomenon is given in figure \ref{fig:Bess_all_freq}, where differently filtered signals are plotted against the original one.
+Looking at the parameters in table \ref{tab:parameters_filtered} we see that, increasing the cutoff frequency we get better and better estimations for all the experimental parameters with respect to the real values set at the beginning of the simulation.
+The uncertainties of these measurements become larger for higher cutoff frequencies: this is due to the fact that the signal is more scattered; on the other hand, the expected value is more accurate.
+This simulation allows us to understand the relation between filtering and loss: the more we filter the signal making it smooth and scarcely fluctuating, the more information we lose about the shape and the magnitude of the peak.
 
 
+\section{References}
 
+Hodgkin \& Huxley, \emph{A quantitative description of membrane current and its application to conduction and excitation in nerve}, The Journal of Physiology, 1952
 
+Jackson M. B., \emph{Molecular and cellular biophysics}, Cambridge University Press, 2006
 
+H. Sontheimer, \emph{Whole-Cell Patch-Clamp Recordings}, Neuromethods, Vol 26 Patch-Clamp Applications and Protocols, Humana Press, 1995
 
+Lecture notes from the course \emph{Biological Physics}
 
+\newpage
+\section{Appendix}
+This section contains the code developed to solve the exercise.
 
-
-
-
-
-
-
-
-
-
+\lstinputlisting[language=matlab]{Test1.m}
 
 
 \end{document}
